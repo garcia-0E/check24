@@ -22,9 +22,6 @@ class TariffService
             $sortBy = explode(":", $sortBy);
         }
         $tariffModelResponse = $this->tariff->list($limit, $offset, $sortBy, $network);
-        if (empty($tariffModelResponse)){
-            return [];
-        }
         $count = count($tariffModelResponse);
         $tariffs = $tariffModelResponse;
         return [
